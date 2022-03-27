@@ -94,13 +94,14 @@ dataSource:
     pooled: true
     jmxExport: true
     driverClassName: com.mysql.cj.jdbc.Driver
-    username: ${JDBC_USERNAME}
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    username: 'root'
     password: ${JDBC_PASSWORD}
 
 environments:
     development:
         dataSource:
-            dbCreate: create-drop
+            dbCreate: update
             url: ${JDBC_URL}
     test:
         dataSource:
